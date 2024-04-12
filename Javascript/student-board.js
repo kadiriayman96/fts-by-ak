@@ -150,6 +150,77 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+function customAlert(title, message) {
+  // Create overlay element
+  const overlay = document.createElement("div");
+  overlay.style.position = "fixed";
+  overlay.style.top = "0";
+  overlay.style.left = "0";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  overlay.style.display = "flex";
+  overlay.style.justifyContent = "center";
+  overlay.style.alignItems = "center";
+  overlay.style.zIndex = "999";
+
+  // Create alert box
+  const alertBox = document.createElement("div");
+  alertBox.style.backgroundColor = "#fff";
+  alertBox.style.padding = "20px";
+  alertBox.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.2)";
+  alertBox.style.maxWidth = "400px";
+  alertBox.style.textAlign = "center";
+
+  // Create title element
+  const titleElement = document.createElement("h2");
+  titleElement.textContent = "Solution : " + title;
+  titleElement.style.color = "#333";
+  titleElement.style.marginBottom = "10px";
+
+  // Create message element
+  const messageElement = document.createElement("p");
+  messageElement.textContent = message;
+  messageElement.style.color = "#666";
+  messageElement.style.marginBottom = "20px";
+
+  // Create close button
+  const closeButton = document.createElement("button");
+  closeButton.textContent = "X";
+  closeButton.style.padding = "10px 20px";
+  closeButton.style.backgroundColor = "#ce0033";
+  closeButton.style.color = "#fff";
+  closeButton.style.border = "none";
+  closeButton.style.cursor = "pointer";
+  closeButton.style.outline = "none";
+  closeButton.style.transition = "background-color 0.3s";
+
+  // Close button hover effect
+  closeButton.addEventListener("mouseover", () => {
+    closeButton.style.backgroundColor = "#76011e";
+  });
+
+  closeButton.addEventListener("mouseout", () => {
+    closeButton.style.backgroundColor = "#76011e";
+  });
+
+  // Close button click event
+  closeButton.addEventListener("click", () => {
+    document.body.removeChild(overlay);
+  });
+
+  // Append elements to alert box
+  alertBox.appendChild(titleElement);
+  alertBox.appendChild(messageElement);
+  alertBox.appendChild(closeButton);
+
+  // Append alert box to overlay
+  overlay.appendChild(alertBox);
+
+  // Append overlay to document body
+  document.body.appendChild(overlay);
+}
+
 // Load Table Body
 function LoadTableBody(sessionUser, tableStudentBody) {
   tableStudentBody.innerHTML = "";
@@ -169,7 +240,7 @@ function LoadTableBody(sessionUser, tableStudentBody) {
       </td>
       ${
         blocage.valide
-          ? `<td><span class="material-symbols-outlined" style="color: green"> check_box </span></td>
+          ? `<td class="show-admin-comment"><span class="material-symbols-outlined" style="color: green"> check_box </span></td>
             <td class="actions">
               <button class="update-button" id="button-gray-style" disabled style="cursor: not-allowed;" disabled>
               <span class="material-symbols-outlined"> edit_square </span>
@@ -326,6 +397,26 @@ function LoadTableBody(sessionUser, tableStudentBody) {
         LoadTableBody(sessionUser, tableStudentBody);
 
         alert("Blocage supprimé avec succès");
+      });
+    });
+
+  // Add event listeners to show admin-comment after update
+  tableStudentBody
+    .querySelectorAll(".show-admin-comment")
+    .forEach(function (button) {
+      button.addEventListener("click", function () {
+        var blocageId = button.closest("tr").getAttribute("data-id");
+
+        var blocageIndex = sessionUser.blocages.findIndex(function (blocage) {
+          return blocage.ID == blocageId;
+        });
+
+        // Get the blocage object to be showed
+        var blocage = sessionUser.blocages[blocageIndex];
+
+        var alertTitle = blocage.solution.Title;
+        var textAlert = blocage.solution.Description;
+        customAlert(alertTitle, textAlert);
       });
     });
 }
