@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Board</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <div class="loader-Admin">
+      <header>
+        <div class="admin-header">
+          <img src="images/fst.png" alt="Logo" class="header-logo" />
+          <button id="logout-button">
+            <span class="material-symbols-outlined"> logout </span>
+            Se déconnecter
+          </button>
+          <button id="logout-button-mobile" class="logout-button-web">
+            <span class="material-symbols-outlined"> logout </span>
+          </button>
+        </div>
+      </header>
+
+      <section>
+        <div class="board" id="admin-board">
+          <div class="dashboard-title">
+            <h3 id="admin-name"></h3>
+          </div>
+          <table class="table-data">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Titre</th>
+                <th>Date de création</th>
+                <th>Difficultés</th>
+                <th>Validé</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Modal Show Difficulty d'un blocage -->
+    <div class="modal-show" id="modal-show">
+      <div class="container" id="modal-container-show">
+        <div class="show-form">
+          <span class="close" id="close-show-button">&times;</span>
+          <h2>Détail d'un Blocage</h2>
+          <form id="show-blocage-form">
+            <div class="form-group">
+              <label for="student">Etudiant</label>
+              <input
+                type="text"
+                id="show-student"
+                name="student"
+                required
+                disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="bootcamp">Bootcamp</label>
+              <input
+                type="text"
+                id="show-bootcamp"
+                name="bootcamp"
+                required
+                disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="brief">Brief</label>
+              <input
+                type="text"
+                id="show-brief"
+                name="brief"
+                required
+                disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="difficulty">La difficulté rencontrée</label>
+              <textarea
+                id="show-difficulty-textarea"
+                name="difficulty"
+                required
+                disabled
+              ></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Admin details -->
+    <div class="modal-admin" id="modal-admin">
+      <div class="container" id="modal-container-admin">
+        <div class="admin-form">
+          <span class="close" id="close-admin-button">&times;</span>
+          <h2 id="admin-modal-name"></h2>
+          <form id="admin-details-validation">
+            <div class="form-group-radio">
+              <input
+                type="radio"
+                id="option_1"
+                name="options"
+                value="Encadré par un formateur"
+              />
+              <label for="option_1">Encadré par un formateur</label><br />
+            </div>
+            <div
+              class="form-group-radio"
+              id="text-area-1"
+              style="display: none"
+            >
+              <textarea class="option-textarea" id="text-solution-1">
+              </textarea>
+            </div>
+
+            <div class="form-group-radio">
+              <input
+                name="options"
+                type="radio"
+                id="option_2"
+                value="Aidé par leurs pairs"
+              />
+              <label for="option_2">Aidé par leurs pairs</label><br />
+            </div>
+            <div
+              class="form-group-radio"
+              id="text-area-2"
+              style="display: none"
+            >
+              <textarea class="option-textarea" id="text-solution-2">
+              </textarea>
+            </div>
+
+            <div class="form-group-radio">
+              <input
+                name="options"
+                type="radio"
+                id="option_3"
+                value="Intervention directe"
+              />
+              <label for="option_3">Intervention directe</label><br />
+            </div>
+            <div
+              class="form-group-radio"
+              id="text-area-3"
+              style="display: none"
+            >
+              <textarea class="option-textarea" id="text-solution-3">
+              </textarea>
+            </div>
+
+            <button type="submit">Valider</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="Javascript/admin-board.js"></script>
+  </body>
+</html>

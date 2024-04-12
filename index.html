@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Future School Talent - Ayman Ka</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-form">
+        <div class="logo">
+          <img src="images/login.png" alt="Logo" />
+        </div>
+        <h2>Se Connecter</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="loginEmail">Adresse e-mail</label>
+            <input type="email" id="loginEmail" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Mot de passe</label>
+            <input
+              type="password"
+              id="loginPassword"
+              name="password"
+              required
+            />
+          </div>
+          <button type="submit">Se connecter</button>
+          <a id="show-register" href="#">Créer un Compte</a>
+        </form>
+      </div>
+
+      <div class="register-form" style="display: none">
+        <div class="logo">
+          <img src="images/login.png" alt="Logo" />
+        </div>
+        <h2>S’inscrire</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="newUsername">Nom</label>
+            <input type="text" id="newUsername" name="new-username" required />
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Adresse e-mail</label>
+            <input type="email" id="registerEmail" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Mot de passe</label>
+            <input
+              type="password"
+              id="registerPassword"
+              name="new-password"
+              required
+            />
+          </div>
+          <button type="submit">S’inscrire</button>
+          <a id="show-login" href="#">Retour à la Connexion</a>
+        </form>
+      </div>
+    </div>
+    <script src="Javascript/index.js"></script>
+  </body>
+</html>

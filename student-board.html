@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Board</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <div class="loader-Student">
+      <header>
+        <div class="student-header">
+          <img src="images/fst.png" alt="Logo" class="header-logo" />
+
+          <button id="logout-button" class="logout-button-web">
+            <span class="material-symbols-outlined"> logout </span>
+            Se deconnecter
+          </button>
+          <button id="logout-button-mobile" class="logout-button-web">
+            <span class="material-symbols-outlined"> logout </span>
+          </button>
+        </div>
+      </header>
+
+      <section>
+        <div class="board">
+          <div class="dashboard-title">
+            <h3 id="student-name"></h3>
+          </div>
+          <table class="table-data">
+            <thead>
+              <tr>
+                <th>Titre</th>
+                <th>Date de création</th>
+                <th>Difficultés</th>
+                <th>Validé</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+
+          <button class="add-blocage" id="add-blocage">
+            <span class="material-symbols-outlined"> add_circle </span>
+            <div id="text-add">Ajouter un Blocage</div>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Modal Etudiant Ajouter Blocage -->
+    <div class="modal-add" id="modal-add">
+      <div class="container">
+        <div class="add-form">
+          <span class="close" id="close-button">&times;</span>
+          <h2>Ajouter un Blocage</h2>
+          <form id="add-blocage-form">
+            <div class="form-group">
+              <label for="formateur">Formateur</label>
+              <select id="select-formateur">
+                <option value="Abdel Aziz">Abdel Aziz</option>
+                <option value="Mohammed">Mohammed</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bootcamp">Bootcamp</label>
+              <select id="select-bootcamp">
+                <option value="Mern">Full Stack Mern Developer</option>
+                <option value="Flutter">Full-Stack Flutter Developer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="title">Titre</label>
+              <input type="text" id="add-title" name="title" required />
+            </div>
+            <div class="form-group">
+              <label for="brief">Brief</label>
+              <input type="text" id="add-brief" name="brief" required />
+            </div>
+            <div class="form-group">
+              <label for="difficulty">La difficulté rencontrée</label>
+              <textarea id="add-difficulty" name="difficulty" required>
+              </textarea>
+            </div>
+            <button type="submit">Ajouter</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Etudiant Modifier un Blocage -->
+    <div class="modal-update" id="modal-update">
+      <div class="container" id="modal-container-update">
+        <div class="update-form">
+          <span class="close" id="close-update-button">&times;</span>
+          <h2>Modifier un Blocage</h2>
+          <form id="update-blocage-form">
+            <div class="form-group">
+              <label for="title">Titre</label>
+              <input type="text" id="update-title" name="title" required />
+            </div>
+            <div class="form-group">
+              <label for="brief">Brief</label>
+              <input type="text" id="update-brief" name="brief" required />
+            </div>
+            <div class="form-group">
+              <label for="difficulty">La difficulté rencontrée</label>
+              <textarea id="update-difficulty" name="difficulty" required>
+              </textarea>
+            </div>
+            <button type="submit">Modifier</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Show Difficulty d'un blocage -->
+    <div class="modal-show" id="modal-show">
+      <div class="container" id="modal-container-show">
+        <div class="show-form">
+          <span class="close" id="close-show-button">&times;</span>
+          <h2>Détail d'un Blocage</h2>
+          <form id="show-blocage-form">
+            <div class="form-group">
+              <label for="formateur">Formateur</label>
+              <input
+                type="text"
+                id="show-formateur"
+                name="formateur"
+                required
+                disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="bootcamp">Bootcamp</label>
+              <input
+                type="text"
+                id="show-bootcamp"
+                name="bootcamp"
+                required
+                disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="brief">Brief</label>
+              <input
+                type="text"
+                id="show-brief"
+                name="brief"
+                required
+                disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="difficulty">La difficulté rencontrée</label>
+              <textarea
+                id="show-difficulty-textarea"
+                name="difficulty"
+                required
+                disabled
+              ></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="Javascript/student-board.js"></script>
+  </body>
+</html>
