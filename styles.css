@@ -181,7 +181,7 @@ section {
   align-items: center;
   position: relative;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 160px;
 }
 
 /* Boards */
@@ -358,7 +358,7 @@ select {
   display: none;
 }
 
-footer{
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
