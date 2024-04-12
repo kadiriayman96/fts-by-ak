@@ -358,6 +358,15 @@ select {
   display: none;
 }
 
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--clr-white);
+  font-size: 20px;
+}
+
 @media screen and (max-width: 800px) {
   /* Index page */
   .container {
