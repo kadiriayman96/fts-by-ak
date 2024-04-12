@@ -79,6 +79,15 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "index.html";
     });
 
+  // last blocage ID in Sessions User blocages
+  function lastblocageID() {
+    if (sessionUser.blocages.length > 0) {
+      return sessionUser.blocages[sessionUser.blocages.length - 1].ID;
+    } else {
+      return 0;
+    }
+  }
+
   // Ajouter un Blocage
   document
     .getElementById("add-blocage-form")
@@ -100,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var dateCreation = getDateNow();
 
       var newBlocage = {
-        ID: sessionUser.blocages.length + 1,
+        ID: lastblocageID() + 1,
         formateur,
         bootcamp,
         title,
