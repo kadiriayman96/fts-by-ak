@@ -242,10 +242,10 @@ function LoadTableBody(sessionUser, tableStudentBody) {
         blocage.valide
           ? `<td class="show-admin-comment"><span class="material-symbols-outlined" style="color: green"> check_box </span></td>
             <td class="actions">
-              <button class="update-button" id="button-gray-style" disabled style="cursor: not-allowed;" disabled>
+              <button class="update-button" id="button-gray-style" style="cursor: not-allowed;" disabled>
               <span class="material-symbols-outlined"> edit_square </span>
               </button>
-              <button class="delete-button" id="button-gray-style" disabled style="cursor: not-allowed;" disabled>
+              <button class="delete-button" id="button-gray-style" style="cursor: not-allowed;" disabled>
                 <span class="material-symbols-outlined"> delete </span>
               </button>
             </td>`

@@ -205,6 +205,9 @@ document.addEventListener("DOMContentLoaded", function () {
                   };
                 }
 
+                // Update Validation Message
+                alert("Blocage : " + blocage.title + " est validé avec succès");
+
                 // Update localStorage users
                 localStorage.setItem("users", JSON.stringify(users));
 
