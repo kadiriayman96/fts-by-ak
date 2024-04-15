@@ -370,9 +370,8 @@ footer {
   left: 0;
   width: 100%;
   padding: 10px;
-  box-sizing: border-box; /* Ensure padding is included in width calculation */
+  box-sizing: border-box;
 }
-
 
 @media screen and (max-width: 800px) {
   /* Index page */
