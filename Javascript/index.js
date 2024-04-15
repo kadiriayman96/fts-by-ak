@@ -2,6 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load functions
   adminExist();
 
+  // Check if the user is online
+  var sessionUser = JSON.parse(localStorage.getItem("sessionUser"));
+
+  if (!sessionUser) {
+  } else {
+    if (sessionUser.role === "admin") {
+      window.location.href = "admin-board.html";
+    } else if (sessionUser.role === "student") {
+      window.location.href = "student-board.html";
+    }
+  }
+
   document
     .getElementById("show-register")
     .addEventListener("click", function () {
