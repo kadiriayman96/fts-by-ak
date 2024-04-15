@@ -111,24 +111,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (user) {
       if (user.role === "admin") {
-        checkSession();
         window.location.href = "admin-board.html";
       } else {
-        checkSession();
         window.location.href = "student-board.html";
       }
     } else {
       alert("Email ou mot de passe incorrect");
-    }
-  }
-
-  // Checker la session
-  function checkSession() {
-    var sessionUser = JSON.parse(localStorage.getItem("sessionUser"));
-
-    if (sessionUser) {
-      // User is logged in
-      alert("Bienvenue " + sessionUser.username + " !");
     }
   }
 });
